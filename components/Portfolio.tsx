@@ -23,7 +23,7 @@ const projects = [
 
 export default function PortfolioSection() {
   return (
-    <section className="relative my-8 bg-gradient-to-br from-[#05050A] via-[#0A0A0F] to-purple-950/20 text-white py-16 px-4 md:px-10 overflow-hidden">
+    <section id="portfolio" className="relative my-8 bg-gradient-to-br from-[#05050A] via-[#0A0A0F] to-purple-950/20 text-white py-16 px-4 md:px-10 overflow-hidden">
       
       {/* Purple blur shadows for background */}
       <div className="absolute inset-0 pointer-events-none">

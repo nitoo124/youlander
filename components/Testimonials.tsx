@@ -96,7 +96,7 @@ const cardVariants = {
 
 export default function Testimonials() {
   return (
-    <section className="relative my-8 bg-gradient-to-br from-[#05050A] via-[#0A0A0F] to-[#1a0a2e] py-20 px-6 text-white overflow-hidden">
+    <section id="testimonials" className="relative my-8 bg-gradient-to-br from-[#05050A] via-[#0A0A0F] to-[#1a0a2e] py-20 px-6 text-white overflow-hidden">
       
       {/* Purple blur shadows for background */}
       <div className="absolute inset-0 pointer-events-none">

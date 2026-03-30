@@ -6,7 +6,7 @@ import { ArrowRight, Sparkles } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-16 md:py-20 bg-gradient-to-br from-[#05050A] via-[#0A0A0F] to-purple-950/20 overflow-hidden">
+    <section id="home" className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-16 md:py-20 bg-gradient-to-br from-[#05050A] via-[#0A0A0F] to-purple-950/20 overflow-hidden">
 
       {/* Premium animated gradient orbs - Reduced intensity with more purple */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">

@@ -5,6 +5,7 @@ import Hero from '@/components/Hero'
 import Services from '@/components/OfferCard'
 import Portfolio from '@/components/Portfolio'
 import Testimonials from '@/components/Testimonials'
+import { Element } from 'react-scroll'
 
 function page() {
   return (

@@ -48,7 +48,7 @@ export default function ChooseUs() {
   };
 
   return (
-    <section className="relative my-8 bg-gradient-to-br from-[#05050A] via-[#0A0A0F] to-purple-950/20 text-white py-20 px-6 overflow-hidden">
+    <section id="services" className="relative my-8 bg-gradient-to-br from-[#05050A] via-[#0A0A0F] to-purple-950/20 text-white py-20 px-6 overflow-hidden">
       
       {/* Purple blur shadows for background */}
       <div className="absolute inset-0 pointer-events-none">

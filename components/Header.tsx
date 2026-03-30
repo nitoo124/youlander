@@ -1,18 +1,18 @@
 "use client"
 
 import Image from "next/image"
-import Link from "next/link"
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { AiOutlineMenuFold } from "react-icons/ai"
 import { IoMdClose } from "react-icons/io"
+import { Link as ScrollLink } from "react-scroll"
 
 const navLinks = [
-  { name: "Home", href: "#home" },
-  { name: "Services", href: "#services" },
-  { name: "Portfolio", href: "#portfolio" },
-  { name: "Testimonials", href: "#testimonials" },
-  { name: "Contact", href: "#contact" },
+  { name: "Home", to: "home" },
+  { name: "Services", to: "services" },
+  { name: "Portfolio", to: "portfolio" },
+  { name: "Testimonials", to: "testimonials" },
+  { name: "Contact", to: "contact" },
 ]
 
 function Header() {
@@ -49,21 +49,37 @@ function Header() {
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
           {navLinks.map((link, index) => (
-            <Link
+            <ScrollLink
               key={index}
-              href={link.href}
-              className="hover:text-purple-400 transition text-gray-50 duration-300"
+              to={link.to}
+              spy={true}
+              smooth={true}
+              duration={1200}
+              delay={50}
+              offset={-80}
+              activeClass="text-purple-400"
+              className="hover:text-purple-400 transition text-gray-50 duration-300 cursor-pointer"
             >
               {link.name}
-            </Link>
+            </ScrollLink>
           ))}
         </nav>
 
         {/* CTA Button (Desktop) */}
         <div className="hidden md:block">
-          <Button className="bg-gradient-to-r from-purple-600 to-violet-600 hover:from-purple-500 hover:to-violet-500 text-gray-50 rounded-xl px-5 transition-all duration-300 hover:scale-110 shadow-lg shadow-purple-600/25">
-            Créer mon site maintenant
-          </Button>
+          <ScrollLink
+            to="contact"
+            spy={true}
+            smooth={true}
+            duration={1200}
+            delay={50}
+            offset={-80}
+            className="cursor-pointer"
+          >
+            <Button className="bg-gradient-to-r from-purple-600 to-violet-600 hover:from-purple-500 hover:to-violet-500 text-gray-50 rounded-xl px-5 transition-all duration-300 hover:scale-110 shadow-lg shadow-purple-600/25">
+              Créer mon site maintenant
+            </Button>
+          </ScrollLink>
         </div>
 
         {/* Mobile Menu Button */}
@@ -87,19 +103,36 @@ function Header() {
         }`}
       >
         {navLinks.map((link, index) => (
-          <Link
+          <ScrollLink
             key={index}
-            href={link.href}
+            to={link.to}
+            spy={true}
+            smooth={true}
+            duration={1200}
+            delay={50}
+            offset={-80}
             onClick={() => setIsOpen(false)}
-            className="block text-sm hover:text-purple-400 transition text-gray-50 duration-300"
+            className="block text-sm hover:text-purple-400 transition text-gray-50 duration-300 cursor-pointer"
+            activeClass="text-purple-400"
           >
             {link.name}
-          </Link>
+          </ScrollLink>
         ))}
 
-        <Button className="w-full bg-gradient-to-r from-purple-600 to-violet-600 hover:from-purple-500 hover:to-violet-500 text-gray-50 rounded-xl transition-all duration-300 hover:scale-105 shadow-lg shadow-purple-600/25">
-          Créer mon site maintenant
-        </Button>
+        <ScrollLink
+          to="contact"
+          spy={true}
+          smooth={true}
+          duration={1200}
+          delay={50}
+          offset={-80}
+          onClick={() => setIsOpen(false)}
+          className="cursor-pointer"
+        >
+          <Button className="w-full bg-gradient-to-r from-purple-600 to-violet-600 hover:from-purple-500 hover:to-violet-500 text-gray-50 rounded-xl transition-all duration-300 hover:scale-105 shadow-lg shadow-purple-600/25">
+            Créer mon site maintenant
+          </Button>
+        </ScrollLink>
       </div>
     </header>
   )

@@ -5,7 +5,7 @@ import { Button } from "./ui/button";
 
 export default function ContactSection() {
   return (
-    <section className="relative bg-gradient-to-br from-[#05050A] via-[#0A0A0F] to-purple-950/20 text-white py-20 px-4 md:px-10 overflow-hidden">
+    <section  id="contact" className="relative bg-gradient-to-br from-[#05050A] via-[#0A0A0F] to-purple-950/20 text-white py-20 px-4 md:px-10 overflow-hidden">
 
       {/* Purple blur shadows for background */}
       <div className="absolute inset-0 pointer-events-none">
