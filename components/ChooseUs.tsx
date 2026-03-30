@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { FaGem, FaBolt, FaUsers, FaGlobe } from "react-icons/fa";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 
 const features = [
   {
@@ -29,7 +29,7 @@ const features = [
 
 export default function ChooseUs() {
 
-  const container = {
+  const container: Variants = {
     hidden: {},
     show: {
       transition: {
@@ -38,7 +38,7 @@ export default function ChooseUs() {
     },
   };
 
-  const item = {
+  const itemVariant: Variants = {
     hidden: { opacity: 0, y: 30 },
     show: {
       opacity: 1,
@@ -130,13 +130,13 @@ export default function ChooseUs() {
             viewport={{ once: true }}
             className="grid sm:grid-cols-2 gap-6"
           >
-            {features.map((item, i) => {
-              const Icon = item.icon;
+            {features.map((feature, i) => {
+              const Icon = feature.icon;
 
               return (
                 <motion.div
                   key={i}
-                  variants={item}
+                  variants={itemVariant}
                   whileHover={{ scale: 1.05 }}
                   className="flex items-start gap-4 p-3 rounded-xl hover:bg-purple-500/5 transition"
                 >
@@ -149,10 +149,10 @@ export default function ChooseUs() {
                   {/* Text */}
                   <div>
                     <h3 className="font-semibold text-lg font-heading">
-                      {item.title}
+                      {feature.title}
                     </h3>
                     <p className="text-sm text-gray-400">
-                      {item.desc}
+                      {feature.desc}
                     </p>
                   </div>
 

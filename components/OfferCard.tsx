@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "./ui/button";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 
 const offers = [
   {
@@ -41,7 +41,7 @@ const offers = [
 
 export default function OfferCard() {
 
-  const container = {
+  const container: Variants = {
     hidden: {},
     show: {
       transition: {
@@ -50,7 +50,7 @@ export default function OfferCard() {
     },
   };
 
-  const card = {
+  const card: Variants = {
     hidden: { opacity: 0, y: 40 },
     show: {
       opacity: 1,
@@ -151,4 +151,3 @@ export default function OfferCard() {
     </section>
   );
 }
-
