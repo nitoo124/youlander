@@ -3,8 +3,14 @@
 import { motion } from "framer-motion";
 import { Button } from "./ui/button";
 import { ArrowRight, Sparkles } from "lucide-react";
+import { useState } from "react";
 
 export default function Hero() {
+  const [bgImagesLoaded, setBgImagesLoaded] = useState({
+    grid: false,
+    noise: false
+  });
+
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-16 md:py-20 bg-gradient-to-br from-[#05050A] via-[#0A0A0F] to-purple-950/20 overflow-hidden">
 
@@ -26,12 +32,16 @@ export default function Hero() {
         <div className="absolute top-[10%] right-[20%] w-[200px] h-[200px] bg-purple-400/8 rounded-full blur-[60px] opacity-25" />
         <div className="absolute bottom-[40%] right-[30%] w-[280px] h-[280px] bg-indigo-500/8 rounded-full blur-[75px] opacity-20" />
         
-        {/* Subtle grid pattern for tech feel */}
-        <div className="absolute inset-0 bg-[url('/grid.svg')] bg-repeat opacity-[0.02]" />
+        {/* Subtle grid pattern for tech feel - Fixed 404 */}
+        {bgImagesLoaded.grid && (
+          <div className="absolute inset-0 bg-[url('/grid.svg')] bg-repeat opacity-[0.02]" />
+        )}
       </div>
 
-      {/* Very subtle noise texture for premium feel */}
-      <div className="absolute inset-0 bg-[url('/noise.png')] opacity-[0.01] pointer-events-none" />
+      {/* Very subtle noise texture for premium feel - Fixed 404 */}
+      {bgImagesLoaded.noise && (
+        <div className="absolute inset-0 bg-[url('/noise.png')] opacity-[0.01] pointer-events-none" />
+      )}
 
       {/* Container */}
       <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16">

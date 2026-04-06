@@ -112,7 +112,7 @@ function Header() {
             delay={50}
             offset={-80}
             onClick={() => setIsOpen(false)}
-            className="block text-sm hover:text-purple-400 transition text-gray-50 duration-300 cursor-pointer"
+            className="block text-sm hover:text-purple-400 sticky transition text-gray-50 duration-300 cursor-pointer"
             activeClass="text-purple-400"
           >
             {link.name}

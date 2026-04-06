@@ -52,37 +52,23 @@ export default function ChooseUs() {
       
       {/* Purple blur shadows for background */}
       <div className="absolute inset-0 pointer-events-none">
-        {/* Top purple glow */}
         <div className="absolute top-[-20%] left-1/2 -translate-x-1/2 w-[400px] h-[200px] bg-purple-600/15 rounded-full blur-[100px] opacity-40" />
-        
-        {/* Bottom purple glow */}
         <div className="absolute bottom-[-20%] left-1/2 -translate-x-1/2 w-[400px] h-[200px] bg-violet-600/12 rounded-full blur-[100px] opacity-30" />
-        
-        {/* Left purple accent */}
         <div className="absolute top-1/3 left-[-10%] w-[250px] h-[250px] bg-purple-500/10 rounded-full blur-[80px]" />
-        
-        {/* Right purple accent */}
         <div className="absolute top-1/2 right-[-10%] w-[250px] h-[250px] bg-indigo-500/10 rounded-full blur-[80px]" />
-        
-        {/* Center ambient purple glow */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] bg-purple-600/10 rounded-full blur-[100px]" />
-        
-        {/* Additional purple orbs */}
         <div className="absolute bottom-[10%] left-[20%] w-[180px] h-[180px] bg-fuchsia-500/8 rounded-full blur-[70px]" />
         <div className="absolute top-[15%] right-[15%] w-[200px] h-[200px] bg-purple-400/8 rounded-full blur-[60px]" />
-        
-        {/* Left side image glow */}
         <div className="absolute top-[40%] left-[5%] w-[300px] h-[300px] bg-purple-600/8 rounded-full blur-[90px]" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
 
-        {/* LEFT IMAGE */}
+        {/* LEFT IMAGE - Fixed with instant visibility */}
         <motion.div
-          initial={{ opacity: 0, x: -50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
+          initial={{ opacity: 1, x: 0 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0 }}
           className="relative flex justify-center"
         >
           <div className="relative w-[320px] md:w-[420px]">
@@ -92,6 +78,8 @@ export default function ChooseUs() {
               alt="mockup"
               width={420}
               height={300}
+              priority
+              loading="eager"
               className="rounded-lg shadow-2xl shadow-purple-500/10"
             />
 
@@ -100,12 +88,11 @@ export default function ChooseUs() {
           </div>
         </motion.div>
 
-        {/* RIGHT CONTENT */}
+        {/* RIGHT CONTENT - Fixed for instant visibility on mobile */}
         <motion.div
-          initial={{ opacity: 0, x: 50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
+          initial={{ opacity: 1, x: 0 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0 }}
         >
           
           {/* Badge */}
@@ -122,12 +109,11 @@ export default function ChooseUs() {
             pour réussir
           </h2>
 
-          {/* FEATURES GRID */}
+          {/* FEATURES GRID - Fixed for instant visibility */}
           <motion.div
             variants={container}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
+            initial="show"
+            animate="show"
             className="grid sm:grid-cols-2 gap-6"
           >
             {features.map((feature, i) => {
