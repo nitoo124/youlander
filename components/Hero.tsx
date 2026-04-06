@@ -65,7 +65,7 @@ export default function Hero() {
               <span className="relative inline-flex rounded-full h-2 w-2 bg-purple-500"></span>
             </span>
             <span className="text-[11px] font-medium tracking-wide text-gray-300 uppercase">
-              Available For Work
+              Votre site web en 7 jours
             </span>
             <Sparkles className="w-3 h-3 text-purple-400/70" />
           </motion.div>
